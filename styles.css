@@ -1,0 +1,127 @@
+:root {
+    --num-columnas: 15;
+    --num-filas: 15;
+    --size: 32px;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+}
+
+#tablero {
+    padding: 10px;
+    display: grid;
+    grid-template-columns: repeat(var(--num-columnas), var(--size));
+    grid-template-rows: repeat(var(--num-filas), var(--size));
+    background-color: #bbb;
+    border: 2px solid #999;
+    width: calc(var(--num-columnas) * var(--size));
+}
+
+#tablero div {
+    background-color: #ccc;
+    border: 1px solid #999;
+    text-align: center;
+    line-height: var(--size);
+    cursor: pointer;
+    user-select: none;
+}
+
+#tablero div.destapado {
+    background-color: #ddd;
+    border-color: #ccc;
+    font-weight: bold;
+}
+
+#tablero div.sinmarcar {
+    background-color: #ff6666;
+}
+
+#tablero div.banderaErronea {
+    background-color: #ffcc66;
+    border-color: #cc9933;
+}
+
+#info {
+    padding: 10px;
+    display: block;
+    background-color: #bbb;
+    border: 2px solid #999;
+    width: calc(var(--num-columnas) * var(--size));
+}
+
+#info div {
+    text-align: right;
+    font-size: 14px;
+    color: #333;
+    border: 1px solid #999;
+    padding: 4px;
+}
+
+#tablero div.c1 {
+    color: #3366cc;
+}
+
+#tablero div.c2 {
+    color: #00802b;
+}
+
+#tablero div.c3 {
+    background-image: url(imagenes/icons8-bomba-96.png);
+    color: #cc0000;
+}
+
+#tablero div.c4 {
+    color: #000080;
+}
+
+#tablero div.c5 {
+    color: #800000;
+}
+
+#tablero div.c6 {
+    color: #006666;
+}
+
+#tablero div.c7 {
+    color: #663300;
+}
+
+#tablero div.c8 {
+    color: #333333;
+}
+
+[class^="icono"]:before,
+[class*=" icono"]:before {
+    font-family: 'fontello';
+    font-style: normal;
+    font-weight: normal;
+    display: inline-block;
+    text-decoration: inherit;
+    width: 1em;
+    margin-right: .2em;
+    text-align: center;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1em;
+    margin-left: .2em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-shadow: 2px 2px 2px #999999;
+}
+
+.iconoBandera:before {
+    content: '\e800';
+    color: #cc0000;
+}
+
+.iconoDuda:before {
+    content: '\e801';
+}
+
+.iconoBomba:before {
+    content: '\f1e2';
+    color: #000080;
+}
